@@ -44,7 +44,6 @@ namespace Prism::Voxel
 
 		
 		m_MeshReady = MakePtr<std::atomic_bool>();
-		PR_INFO("MADE ATOMIC=");
 
 		m_Colors.push_back({ 0.f, 0.f, 0.6f });
 		m_Colors.push_back({ 0.9f, 0.9f, 0.52f });
@@ -69,33 +68,42 @@ namespace Prism::Voxel
 		m_Blocks.resize(total);
 		m_BlockHeights.resize(m_XSize * m_ZSize, 0);
 
-		/*
+		
 		m_Mesh->AllocateBufferData(0, 4 * total);
 		m_Mesh->AllocateBufferData(1, 8 * total);
 		m_Mesh->AllocateIndexData(8192);
-		*/
+		
 		m_IsAllocated = true;
 		*m_MeshReady = false;
 	}
 
-	void Chunk::Populate(std::function<float(int, int)> popFunc)
+	void Chunk::SetPopulationFunction(std::function<float(int, int)> PopFunc)
 	{
+		m_PopulationFunction = PopFunc;
+	}
+
+	void Chunk::SetMappingFunction(std::function<void()> MapFunc)
+	{
+		m_MappingFunction = MapFunc;
+	}
+	
+	void Chunk::Populate()
+	{
+		PR_ASSERT(m_PopulationFunction, "(Chunk) No population function present!");
 		System::Time::Scope<System::Time::Miliseconds> RandomTimer("Chunk Population");
 		*m_MeshReady = false;
+		int ySize = m_YSize - 1;
+		int zOffset = m_ZSize * m_YOffset;
+		int xOffset = m_XSize * m_XOffset;
 		for (int x = 0; x < m_XSize; x++)
 		{
+			int xTranslated = x + xOffset;
 			for (int z = 0; z < m_ZSize; z++)
 			{
-				int height = ceil(popFunc(x + (m_XSize * m_XOffset), z + (m_ZSize * m_YOffset)) * (m_YSize - 1));
+				int height = ceil(m_PopulationFunction(xTranslated, z + zOffset) * ySize);
 				height = glm::clamp(height, 0, m_YSize);
 				for (int i = 0; i < height; i++)
 				{
-					// Todo: make this a mapping function
-					if (i == height - 1)
-					{
-						m_Blocks[_GetBlockLoc(x, z, i)].Type = BlockType::DIRT;
-						break;
-					}
 					m_Blocks[_GetBlockLoc(x, z, i)].Type = BlockType::BLOCK;
 				}
 				m_BlockHeights[_GetLoc(x, z)] = height;
@@ -119,12 +127,11 @@ namespace Prism::Voxel
 		auto v2p = m_Mesh->AddVertex(p2);
 		auto v3p = m_Mesh->AddVertex(p3);
 
-		 glm::vec3 normal = glm::cross((p2 - p0), (p3 - p1));
+		//glm::vec3 normal = glm::cross((p2 - p0), (p3 - p1));
 		
 		m_Mesh->ConnectVertices(v0p, v1p, v3p);
 		m_Mesh->ConnectVertices(v3p, v1p, v2p);
-		
-		_PassVertParam(m_NormalBuffer, normal);
+	
 		//_TexCord();
 	}
 	
@@ -186,14 +193,7 @@ namespace Prism::Voxel
 	void Chunk::GenerateMesh()
 	{
 		System::Time::Scope<System::Time::Miliseconds> RandomTimer("Chunk Mesh Generation");
-		bool Sides[4] =
-		{
-			1,  // LEFT
-			1,	// RIGHT
-			1,	// FRONT
-			1	// BACK
-		};
-		
+
 		int yStart;
 		int yEnd;
 		int xStart;
@@ -204,10 +204,23 @@ namespace Prism::Voxel
 		int height;
 		int l;
 
-		// TEMP will optimize
 		int ValidSides;
+		
+		bool Sides[4] =
+		{
+			1,  // LEFT
+			1,	// RIGHT
+			1,	// FRONT
+			1	// BACK
+		};
 
-		// Will use
+		float Normals[12] = {
+			-1.f, 0.f, 0.f,
+			1.f, 0.f, 0.f,
+			0.f, 0.f, 1.f,
+			0.f, 0.f, -1.f,
+		};
+		
 		int* VertexOffsets[48] = {
 			// Left
 			&xEnd, &yEnd, &zStart,
@@ -231,7 +244,7 @@ namespace Prism::Voxel
 			&xEnd, &yEnd, &zStart
 		};
 
-		int colorOffset = (m_YSize - 1) / (m_Colors.size() - 1);
+		// int colorOffset = (m_YSize - 1) / (m_Colors.size() - 1);
 		for (int x = 0; x < m_XSize; x++)
 		{
 			for (int z = 0; z < m_ZSize; z++)
@@ -252,21 +265,19 @@ namespace Prism::Voxel
 				
 				while (l-- >= 0)
 				{
-					m_CreatedFaces = 0;
-					ChunkBlockPosition current = _GetBlockState(x, z, l);
-					if (current == ChunkBlockPosition::EDGE)
+					if (ValidSides <= 0)
 					{
-						break;
+						continue;
 					}
 
 					yStart = l * m_BlockSize;
 					yEnd = yStart + m_BlockSize;
+					
+					float r = 0.f;
+					float g = 0.8f;
+					float b = 0.1f;
 
-					// Will change dramatically
-					// Just a simple way to color the data
-					float r;
-					float g;
-					float b;
+					/*
 					int activeClrIdx = l / colorOffset;
 					int offset = l % colorOffset;
 
@@ -315,10 +326,9 @@ namespace Prism::Voxel
 							offset
 							);
 					}
-					
-					if (current == ChunkBlockPosition::TOP)
+					*/
+					if (l == height - 1)
 					{
-						m_CreatedFaces++;
 						_CreateQuad(
 							 xStart,  yEnd,  zEnd,
 							 xStart,  yEnd,  zStart,
@@ -326,11 +336,9 @@ namespace Prism::Voxel
 							 xEnd,  yEnd,  zEnd
 						);
 						_PassVertParam(m_ColorBuffer, { r, g, b });
+						_PassVertParam(m_NormalBuffer, { 0.f, 1.f, 0.f });
 					}
-
 					
-					 // WIP
-					/*
 					int positions[12] = {
 						x + 1, z, l, // Left
 						x - 1, z, l, // Right
@@ -339,9 +347,14 @@ namespace Prism::Voxel
 					};
 					for (int i = 0; i < 4; i++)
 					{
-						int* posPtr = &positions[i * 3];
+						if (!Sides[i])
+						{
+							continue;
+						}
+						int* Positions = &positions[i * 3];
 						int** Vertex = &VertexOffsets[i * 12];
-						if (_BlockExists(_GetBlockState(posPtr[0], posPtr[1], posPtr[2])))
+						float* Normal = &Normals[i * 3 ];
+						if (!(Sides[i] = _BodyBlockExists(_GetBlockState(Positions[0], Positions[1], Positions[2]))))
 						{
 							_CreateQuad(
 									*Vertex[0], *Vertex[1], *Vertex[2],
@@ -349,60 +362,12 @@ namespace Prism::Voxel
 									*Vertex[6], *Vertex[7], *Vertex[8],
 									*Vertex[9], *Vertex[10], *Vertex[11]
 							);
+							_PassVertParam(m_ColorBuffer, { r, g, b });
+							_PassVertParam(m_NormalBuffer, { Normal[0], Normal[1], Normal[2] });
+						} else
+						{
+							ValidSides--;
 						}
-					}
-					*/
-					
-					ChunkBlockPosition left = _GetBlockState(x + 1, z, l);
-					ChunkBlockPosition right = _GetBlockState(x - 1, z, l);
-					ChunkBlockPosition front = _GetBlockState(x, z + 1, l);
-					ChunkBlockPosition back = _GetBlockState(x, z - 1, l);
-					
-					if (!_BlockExists(left))
-					{
-						m_CreatedFaces++;
-						_CreateQuad(
-							 xEnd,  yEnd,  zStart,
-							 xEnd,  yStart,  zStart,
-							 xEnd,  yStart,  zEnd,
-							 xEnd,  yEnd,  zEnd
-						);
-						_PassVertParam(m_ColorBuffer, { r, g, b });
-					}
-
-					if (!_BlockExists(right))
-					{
-						m_CreatedFaces++;
-						_CreateQuad(
-							 xStart,  yEnd,  zStart,
-							 xStart,  yStart,  zStart,
-							 xStart,  yStart,  zEnd,
-							 xStart,  yEnd,  zEnd
-						);
-						_PassVertParam(m_ColorBuffer, { r, g, b });
-					}
-
-					if (!_BlockExists(front))
-					{
-						m_CreatedFaces++;
-						_CreateQuad(
-							 xStart,  yEnd,  zEnd,
-							 xStart,  yStart,  zEnd,
-							 xEnd,  yStart,  zEnd,
-							 xEnd,  yEnd,  zEnd
-						);
-						_PassVertParam(m_ColorBuffer, { r, g, b });
-					}
-					if (!_BlockExists(back))
-					{
-						m_CreatedFaces++;
-						_CreateQuad(
-							 xStart,  yEnd,  zStart,
-							 xStart,  yStart,  zStart,
-							 xEnd,  yStart,  zStart,
-							 xEnd,  yEnd,  zStart
-						);
-						_PassVertParam(m_ColorBuffer, { r, g, b });
 					}
 				}
 			}

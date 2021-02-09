@@ -57,8 +57,13 @@ void WorldGen::GenerateWorld(int BlockSize, int ChunkSize, int ChunkXCount, int 
 
 		auto s = m_Chunks->at(last).Size();
 
-		m_ChunkData.push_back({ glm::vec3{ s.x - 8, s.y, s.z } *glm::vec3(bx, 0.f, bz) });
+		m_ChunkData.push_back({ glm::vec3{ s.x, s.y, s.z } *glm::vec3(bx, 0.f, bz) });
 		m_Chunks->at(last).SetOffset(bx, bz);
+		m_Chunks->at(last).SetPopulationFunction([this](int x, int y)
+			{
+				auto noise = m_Noise.Fractal2(x, y);
+				return (noise + 1) / 2;
+			});
 	}
 
 	for (auto& chunk : *m_Chunks)
@@ -66,11 +71,7 @@ void WorldGen::GenerateWorld(int BlockSize, int ChunkSize, int ChunkXCount, int 
 		m_Ctx->Tasks->GetWorker("bg")->QueueTask([this, &chunk]()
 			{
 				chunk.Allocate();
-				chunk.Populate([this](int x, int y)
-					{
-						auto noise = m_Noise.Fractal2(x, y);
-						return (noise + 1) / 2;
-					});
+				chunk.Populate();
 				chunk.GenerateMesh();
 			});
 	}
@@ -104,6 +105,19 @@ void WorldGen::OnSystemEvent(Event& e)
 				m_Ctx->SystemOptions->EnableCursor();
 			}
 			break;
+		case Keyboard::LSHIFT:
+			m_MoveSpeedMultiplier = 2;
+			break;
+		}
+	});
+
+	CLASSEVENT(handler, KeyReleasedEvent)
+	{
+		switch (e.GetKey())
+		{
+		case Keyboard::LSHIFT:
+			m_MoveSpeedMultiplier = 1;
+			break; 
 		}
 	});
 }
@@ -115,14 +129,16 @@ void WorldGen::OnGuiDraw()
 	m_CursorOverGui = io.WantCaptureMouse;
 	
 	ImGui::BeginMainMenuBar();
-	ImGui::MenuItem("Graphics", 0, &m_ShowChunkCtrls);
-	ImGui::MenuItem("World Generation", 0, &m_ShowBaseCtrls);
+	ImGui::MenuItem("Graphics", 0, &m_ShowBaseCtrls);
+	ImGui::MenuItem("World Generation", 0, &m_ShowChunkCtrls);
 	ImGui::MenuItem("Controls", 0, &m_ShowControls);
 	ImGui::EndMainMenuBar();
 
 	if (m_ShowControls)
 	{
+		auto& camPos = m_Camera.GetPosition();
 		ImGui::Begin("System");
+		ImGui::Text("Camera Position: %.f, %.f, %.f", camPos.x, camPos.y, camPos.z);
 		ImGui::SliderFloat("Mouse Sensitivty ", &m_MouseSens, 0, 1);
 		ImGui::SliderFloat("Camera Move Speed", &m_MoveSpeed, 0, 100);
 		ImGui::Text("Toggle Wireframe = F1");
@@ -158,7 +174,7 @@ void WorldGen::OnGuiDraw()
 void WorldGen::OnUpdate(float dt)
 {
 	m_Camera.GetController()->SetRotationSpeed(m_MouseSens);
-	m_Camera.GetController()->SetMoveSpeed(m_MoveSpeed);
+	m_Camera.GetController()->SetMoveSpeed(m_MoveSpeed * m_MoveSpeedMultiplier);
 
 	m_Camera.ShouldLock(m_CameraLocked);
 	m_Camera.OnUpdate(dt);

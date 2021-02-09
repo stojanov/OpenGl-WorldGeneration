@@ -114,13 +114,14 @@ namespace Prism::Renderer
 		m_LookAt += m_DPosition;
 		
 		glm::vec3 axis = glm::cross(m_Direction, m_Up);
+
 		glm::quat pitch = glm::angleAxis(m_RotationDelta.y, axis);
 		glm::quat heading = glm::angleAxis(m_RotationDelta.x, m_Up);
 
 		glm::quat rotation = glm::normalize(glm::cross(pitch, heading));
 
 		m_Direction = glm::rotate(rotation, m_Direction);
-		m_Up = glm::rotate(rotation, m_Up);
+		//m_Up = glm::rotate(rotation, m_Up);
 		
 		m_LookAt = m_Position + m_Direction;
 		m_View = glm::lookAt(m_Position, m_LookAt, m_Up);

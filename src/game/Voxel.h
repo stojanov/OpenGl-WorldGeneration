@@ -19,7 +19,6 @@ public:
 	WorldGen(Core::SharedContextRef ctx, const std::string& name);
 	virtual ~WorldGen();
 
-
 	void GenerateWorld(int BlockSize, int ChunkSize, int ChunkXCount, int ChunkYCount);
 	void OnAttach() override;
 	void OnDetach() override;
@@ -56,4 +55,5 @@ private:
 	int m_ChunkCount{ 25 };
 	float m_MouseSens{ 0.3 };
 	float m_MoveSpeed{ 35 };
+	int m_MoveSpeedMultiplier{ 1 };
 };

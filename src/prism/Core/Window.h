@@ -16,9 +16,6 @@ namespace Prism::Core
 		Window();
 		virtual ~Window();
 
-		int GetWidth() const;
-		int GetHeight() const;
-		
 		void Create(int w, int h, const char* name);
 		SystemEventManager& GetInputManager() { return m_InputEventManager; }
 
@@ -26,6 +23,16 @@ namespace Prism::Core
 		void ProcessEvents();
 		void SetEventCallback(EventCallback callback);
 
+		int Window::GetWidth() const
+		{
+			return m_Data.Width;
+		}
+
+		int Window::GetHeight() const
+		{
+			return m_Data.Height;
+		}
+		
 		void Close();
 		GLFWwindow* GetNativeWindow() const { return m_WindowPtr;  }
 		GLFWwindow* GetLoadingContext() const { return m_LoadingContext; }

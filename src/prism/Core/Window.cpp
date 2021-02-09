@@ -20,17 +20,7 @@ namespace Prism::Core
 	{
 		glfwDestroyWindow(m_WindowPtr);
 	}
-
-	int Window::GetWidth() const
-	{
-		return m_Data.Width;
-	}
-
-	int Window::GetHeight() const 
-	{
-		return m_Data.Height;
-	}
-
+	
 	void Window::BindWindow()
 	{
 		glfwMakeContextCurrent(m_WindowPtr);

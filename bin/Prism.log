@@ -1,0 +1,445 @@
+[16:58:00] [warning] PRISM: (BackgroundTasks) Regisering worker glcontext
+[16:58:00] [warning] PRISM: (BackgroundTasks) Regisering worker bg
+[16:58:00] [info] PRISM: Gpu - NVIDIA Corporation GeForce GTX 970/PCIe/SSE2
+[16:58:00] [info] PRISM: Driver - 4.0.0 NVIDIA 461.09
+[16:58:00] [info] PRISM: Shader Version - 4.00 NVIDIA via Cg compiler
+[16:58:00] [info] PRISM: Assets (Shaders)	(Loading)	baseshader
+[16:58:00] [info] PRISM: Assets (Shaders)	(Loaded)	baseshader
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] APP: MADE ATOMIC=
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		28ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		35ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		32ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		2ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		2ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:00] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:00] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] APP: MADE ATOMIC=
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:48] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:48] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		13ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		22ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		21ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:49] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:49] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		15ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		13ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		18ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		19ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		17ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		14ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		20ms
+[16:58:50] [info] PRISM: (Timer) Chunk Population		1ms
+[16:58:50] [info] PRISM: (Timer) Chunk Mesh Generation		16ms

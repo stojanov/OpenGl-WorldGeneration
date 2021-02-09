@@ -17,6 +17,7 @@ namespace Prism::Voxel
 			return (x == other.x) && (y == other.y);
 		}
 	};
+
 	
 	class Chunk
 	{
@@ -37,8 +38,8 @@ namespace Prism::Voxel
 		enum class ChunkBlockPosition
 		{
 			NONEXIST = 0,
-			TOP,
 			EDGE,
+			TOP,
 			BODY,
 			
 			COUNT
@@ -47,17 +48,20 @@ namespace Prism::Voxel
 		Chunk(int Size, int blockSize);
 		
 		void Allocate();
-		void Populate(std::function<float(int, int)> popFunc);
+		void Populate();
+		void SetPopulationFunction(std::function<float(int, int)> PopFunc);
+		void SetMappingFunction(std::function<void()> MapFunc);
 		void GenerateMesh();
 		void SendToGpu();
 		void SetOffset(int x, int y);
+		void RebuildMesh();
+		void UpdateGpu(); // Will update only if rebuild has been called
+		
 		const Vec2& GetOffset()
 		{
 			return Vec2{ m_XOffset, m_YOffset };
 		}
-		void RebuildMesh();
-		void UpdateGpu(); // Will update only if rebuild has been called
-
+		
 		glm::mat4& GetTransform()
 		{
 			return m_Transform;
@@ -117,10 +121,6 @@ namespace Prism::Voxel
 		}
 		ChunkBlockPosition _GetBlockState(int x, int y, int z)
 		{
-			if (x == 0 || x == m_XSize - 1 || z == 0 || z == m_ZSize - 1)
-			{
-				return ChunkBlockPosition::EDGE;
-			}
 			if (
 					(x < 0 || x >= m_XSize || z < 0 || z >= m_ZSize || y < 0 || y > m_YSize)
 				)
@@ -137,9 +137,10 @@ namespace Prism::Voxel
 			return ChunkBlockSelection[(int)m_Blocks[_GetBlockLoc(x, y, z)].Type];
 		}
 
-		bool _BlockExists(ChunkBlockPosition b)
+		bool _BodyBlockExists(ChunkBlockPosition b)
 		{
-			return b == ChunkBlockPosition::BODY || b == ChunkBlockPosition::TOP;
+			// return b == ChunkBlockPosition::BODY || b == ChunkBlockPosition::TOP;
+			return ((int)b) >= 2;
 		}
 	
 		Ptr<Renderer::DynamicMesh> m_Mesh;
@@ -147,6 +148,8 @@ namespace Prism::Voxel
 		 // Will be used once the mesh is created to create a more
 		//  optimized mesh for adding and removing blocks
 		std::vector<int> m_BlockHeights;
+		std::function<void()> m_MappingFunction;
+		std::function<float(int, int)> m_PopulationFunction;
 		Ptr<std::atomic_bool> m_MeshReady;
 		std::vector<glm::vec3> m_Colors;
 		glm::vec3 m_Position;
