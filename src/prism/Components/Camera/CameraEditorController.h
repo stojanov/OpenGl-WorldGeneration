@@ -26,6 +26,16 @@ namespace Prism::Renderer
 		{
 			m_IsLocked = lck;
 		}
+
+		void SetRotationSpeed(float s) override
+		{
+			m_MouseMoveSens = s;
+		}
+		
+		void SetMoveSpeed(float s) override
+		{
+			m_MouseMoveSens = s;
+		}
 		
 		void OnSystemEvent(Event& e) override
 		{
@@ -37,7 +47,7 @@ namespace Prism::Renderer
 
 			CLASSEVENT(evt, MouseScrollEvent)
 			{
-				m_Position.y += e.GetPosition().y * 10;
+				m_Position.y += e.GetPosition().y * m_MouseMoveSens * 25;
 			});
 			
 			CLASSEVENT(evt, MouseButtonDownEvent)
@@ -53,7 +63,7 @@ namespace Prism::Renderer
 					if (m_ShouldRotate)
 					{
 						m_Rotation.x += (pos.x - m_LastMousePosition.x) * m_MouseRotateSens;
-						m_Rotation.y -= (pos.y - m_LastMousePosition.y) * m_MouseRotateSens;
+						m_Rotation.y += (pos.y - m_LastMousePosition.y) * m_MouseRotateSens;
 					}
 				}
 
@@ -92,11 +102,15 @@ namespace Prism::Renderer
 				});
 			}
 		}
+
+		void ResetDelta() override
+		{
+			
+		}
 		
 		void Update(float dt) override
 		{
-			m_Camera->SetVerticalRotation(m_Rotation.y * dt);
-			m_Camera->SetHorizontalRotation(m_Rotation.x * dt);
+			m_Camera->OffsetRotation(m_Rotation * dt);
 			m_Camera->MoveX(m_Position.x * dt);
 			m_Camera->MoveZ(m_Position.y * dt);
 			m_Camera->MoveY(m_Position.z * dt);

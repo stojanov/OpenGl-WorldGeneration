@@ -1,13 +1,13 @@
 #include <iostream>
 
 #include "prism/Prism.h"
-#include "prism/Examples/BaseExample.h"
+#include "Voxel.h"
 
 int main()
 {
-	Prism::Application app(980, 750, "Prism");
+	Prism::Application app(1280, 720, "Prism");
 	
-	app.CreateLayer<Prism::Examples::Base>("Base Example");
+	app.CreateLayer<WorldGen>("Voxel Example");
 	
 	app.Run();
 	
