@@ -2,6 +2,7 @@
 
 #include "prism/Prism.h"
 #include "Voxel.h"
+#include "prism/System/DynamicArray.h"
 
 int main()
 {

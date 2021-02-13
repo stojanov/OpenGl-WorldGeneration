@@ -57,7 +57,7 @@ void WorldGen::GenerateWorld(int BlockSize, int ChunkSize, int ChunkXCount, int 
 
 		auto s = m_Chunks->at(last).Size();
 
-		m_ChunkData.push_back({ glm::vec3{ s.x, s.y, s.z } *glm::vec3(bx, 0.f, bz) });
+		m_ChunkData.push_back({ glm::vec3{ s.x, s.y, s.z } * glm::vec3(bx, 0.f, bz) });
 		m_Chunks->at(last).SetOffset(bx, bz);
 		m_Chunks->at(last).SetPopulationFunction([this](int x, int y)
 			{

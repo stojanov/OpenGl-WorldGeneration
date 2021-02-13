@@ -4,6 +4,7 @@
 
 #include "prism/Renderer/DynamicMesh.h"
 #include "prism/Core/SharedContext.h"
+#include "prism/Renderer/AllocatedMesh.h"
 
 namespace Prism::Voxel
 {
@@ -21,6 +22,7 @@ namespace Prism::Voxel
 	
 	class Chunk
 	{
+		using MeshType = Renderer::DynamicMesh;
 	public:
 		enum class BlockType
 		{
@@ -38,8 +40,6 @@ namespace Prism::Voxel
 		enum class ChunkBlockPosition
 		{
 			NONEXIST = 0,
-			EDGE,
-			TOP,
 			BODY,
 			
 			COUNT
@@ -104,34 +104,37 @@ namespace Prism::Voxel
 		{
 			return m_XSize * y + x;
 		}
+		
 		int _GetBlockLoc(int x, int y, int z) const
 		{
 			return m_XSize * (y + m_ZSize * z) + x;
 		}
-		int _GetMeshOffset(int x, int y, int z) const
+
+		bool _Check2DBounds(int x, int y)
 		{
-			if ((x * y * z * 2) > m_Mesh->GetIndexData().size())
-			{
-				return -1;
-			}
-			x <<= 1;
-			y <<= 1;
-			z <<= 1;
-			return m_XSize * (y + m_ZSize * z) + x;
+			// return !(x < 0 && x > m_XSize && y < 0 &&  y > m_ZSize);
+			return x > 0 && x < m_XSize && y > 0 && y < m_ZSize;
 		}
+
+		int _FetchNeighbour(int x, int y)
+		{
+			int xOffset = x + m_XSize * m_XOffset;
+			int zOffset = y + m_ZSize * m_YOffset;
+			int ySize = m_YSize - 1;
+			int height = ceil(m_PopulationFunction(xOffset, zOffset) * ySize);
+			return glm::clamp(height, 0, m_YSize);
+		}
+		
 		ChunkBlockPosition _GetBlockState(int x, int y, int z)
 		{
-			if (
-					(x < 0 || x >= m_XSize || z < 0 || z >= m_ZSize || y < 0 || y > m_YSize)
-				)
+			if (!(x > m_XSize && z > m_ZSize && y > m_YSize))
 			{
 				return ChunkBlockPosition::NONEXIST;
 			}
-
-			static ChunkBlockPosition ChunkBlockSelection[3] = {
+			
+			static ChunkBlockPosition ChunkBlockSelection[2] = {
 				ChunkBlockPosition::NONEXIST,
 				ChunkBlockPosition::BODY,
-				ChunkBlockPosition::TOP
 			};
 			
 			return ChunkBlockSelection[(int)m_Blocks[_GetBlockLoc(x, y, z)].Type];
@@ -139,32 +142,32 @@ namespace Prism::Voxel
 
 		bool _BodyBlockExists(ChunkBlockPosition b)
 		{
-			// return b == ChunkBlockPosition::BODY || b == ChunkBlockPosition::TOP;
 			return ((int)b) >= 2;
 		}
-	
-		Ptr<Renderer::DynamicMesh> m_Mesh;
+
+		Ptr<MeshType> m_Mesh;
+		//Ptr<Renderer::DynamicMesh> m_Mesh;
 		std::vector<BlockData> m_Blocks; // Vector of vectors to secure infinite height on terrain
 		 // Will be used once the mesh is created to create a more
 		//  optimized mesh for adding and removing blocks
 		std::vector<int> m_BlockHeights;
 		std::function<void()> m_MappingFunction;
 		std::function<float(int, int)> m_PopulationFunction;
+		uint32_t m_NormalBuffer;
+		uint32_t m_ColorBuffer;
 		Ptr<std::atomic_bool> m_MeshReady;
-		std::vector<glm::vec3> m_Colors;
 		glm::vec3 m_Position;
 		glm::mat4 m_Transform{ 1.f };
 		int m_CreatedFaces{ 0 };
 		bool m_IsAllocated{ false };
 		bool m_DataSentToGpu{ false };
-		uint32_t m_NormalBuffer;
-		uint32_t m_ColorBuffer;
+
 		int m_BlockSize;
 		int m_XSize;
 		int m_YSize;
 		int m_ZSize;
 		int m_XOffset{ 0 };
-		int m_YOffset{ 0 }; 
+		int m_YOffset{ 0 };
 	};
 	
 }
